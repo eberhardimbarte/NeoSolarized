@@ -2,7 +2,7 @@
 " Author:   iCyMind <icyminnd@gmail.com>
 " URL:      https://github.com/iCyMind/NeoSolarized
 " License:  MIT
-" Modified: Mon Sep 26 14:45:22 CST 2016
+" Modified: Thu Jan 10 10:07:42 CST 2019 (by eberhardimbarte)
 
 " Usage "{{{
 "
@@ -26,6 +26,7 @@
 " g:neosolarized_bold
 " g:neosolarized_underline
 " g:neosolarized_italic
+" g:neosolarized_grayish
 "
 " ---------------------------------------------------------------------
 " INSTALLATION:
@@ -88,6 +89,21 @@
 " cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 " green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 "
+" If you are using the modified grayish colorscheme, then the base
+" colors are as follows:
+"
+" "TODO: add xterm/hex values
+" SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      sRGB        HSB
+" --------- ------- ---- -------  ----------- ---------- ----------- -----------
+" base03    #15282e  8/4 brblack  ??? #?????? 15 -06 -06  21  40  54 193  53  18
+" base02    #203339  0/4 black    ??? #?????? 20 -06 -06  32  51  57 193  44  22
+" base01    #626c6f 10/7 brgreen  ??? #?????? 45 -03 -03  98 108 111 194  12  44
+" base00    #6f797c 11/7 bryellow ??? #?????? 50 -03 -03 111 121 124 195  11  49
+" base0     #8a9292 12/6 brblue   ??? #?????? 60 -03 -01 138 146 146 179   6  57
+" base1     #999f9f 14/4 brcyan   ??? #?????? 65 -02 -01 153 159 159 185   4  63
+" base2     #ece8de  7/7 white    ??? #?????? 92 -00  05 236 232 222  40   6  93
+" base3     #fbf6ed 15/7 brwhite  ??? #?????? 97  00  05 251 246 237  40   6  98
+"
 " ---------------------------------------------------------------------
 " COLORSCHEME HACKING
 " ---------------------------------------------------------------------
@@ -116,6 +132,7 @@ let g:neosolarized_underline = get(g:, "neosolarized_underline", 1)
 let g:neosolarized_italic = get(g:, "neosolarized_italic", 0)
 let g:neosolarized_termtrans = get(g:, "neosolarized_termtrans", 0)
 let g:neosolarized_vertSplitBgTrans = get(g:, "neosolarized_vertSplitBgTrans", 1)
+let g:neosolarized_grayish = get(g:, "neosolarized_grayish", 0)
 
 "}}}
 
@@ -134,14 +151,25 @@ let colors_name = "NeoSolarized"
 "
 " Set gui and terminal at the same time.
     let s:gui_mode       = "gui"
-    let s:gui_base03      = "#002b36"
-    let s:gui_base02      = "#073642"
-    let s:gui_base01      = "#586e75"
-    let s:gui_base00      = "#657b83"
-    let s:gui_base0       = "#839496"
-    let s:gui_base1       = "#93a1a1"
-    let s:gui_base2       = "#eee8d5"
-    let s:gui_base3       = "#fdf6e3"
+    if g:neosolarized_grayish == 1
+        let s:gui_base03      = "#15282e"
+        let s:gui_base02      = "#203339"
+        let s:gui_base01      = "#626c6f"
+        let s:gui_base00      = "#6f797c"
+        let s:gui_base0       = "#8a9292"
+        let s:gui_base1       = "#999f9f"
+        let s:gui_base2       = "#ece8de"
+        let s:gui_base3       = "#fbf6ed"
+    else
+        let s:gui_base03      = "#002b36"
+        let s:gui_base02      = "#073642"
+        let s:gui_base01      = "#586e75"
+        let s:gui_base00      = "#657b83"
+        let s:gui_base0       = "#839496"
+        let s:gui_base1       = "#93a1a1"
+        let s:gui_base2       = "#eee8d5"
+        let s:gui_base3       = "#fdf6e3"
+    endif
     let s:gui_yellow      = "#b58900"
     let s:gui_orange      = "#cb4b16"
     let s:gui_red         = "#dc322f"

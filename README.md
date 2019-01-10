@@ -6,6 +6,7 @@ Fork from [vim-colors-solarized](https://github.com/altercation/vim-colors-solar
 - truecolor support for neovim/vim terminal, and works well in Gvim/MacVim.
 - define color for neovim's embed terminal.
 - define color for [Neomake](https://github.com/neomake/neomake), [GitGutter](https://github.com/airblade/vim-gitgutter), [ALE](https://github.com/w0rp/ale)
+- add colorscheme with more grayish base colors.
 
 ## Requirements
 - A [terminal](https://gist.github.com/XVilka/8346728) which supports truecolor
@@ -30,7 +31,7 @@ Move NeoSolarized.vim to your vim RunTimePath directory:
     mv NeoSolarized.vim ~/.vim/colors/
     ```
 - Plugin managers: [vim-plug](https://github.com/junegunn/vim-plug):
-    - Add `Plug 'iCyMind/NeoSolarized'` to your `init.vim` or `.vimrc` file.
+    - Add `Plug 'eberharimbarte/NeoSolarized'` to your `init.vim` or `.vimrc` file.
     - Run `:PlugInstall` after resourcing/relaunching.
 
 After the installation, configure it as your colorscheme by putting the following line into your `init.vim` or `.vimrc` file:
@@ -46,6 +47,11 @@ Make sure to put configuration before the line `colorscheme NeoSolarized` in `in
 " same Solarized palette but simply shifts some values up or down in order to 
 " expand or compress the tonal range displayed.
 let g:neosolarized_contrast = "normal"
+
+" Set this to 1, if you wish to use the modified color scheme with more
+" grayish base colors.
+" Default value is 0.
+" let g:neosolarized_grayish = 0
 
 " Special characters such as trailing whitespace, tabs, newlines, when displayed 
 " using ":set list" can be set to one of three levels depending on your needs. 
